@@ -64,12 +64,14 @@ button:hover {
 #messageDisplay {
   /* width: 20%; */
 }
-#stripe{
+
+#stripe {
   margin: 1% auto;
   text-align: center;
-  color:black;
+  color: black;
   background-color: white;
 }
-#resetButton{
-  border:none;
+
+#resetButton {
+  border: none;
 }

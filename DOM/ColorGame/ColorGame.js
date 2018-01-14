@@ -1,13 +1,15 @@
 var numSquares = 6;
 var colors = generateRandomColors(numSquares);
-var squareColor = document.querySelectorAll(".square");
 var pickedColor = pickColor();
+
+var squareColor = document.querySelectorAll(".square");
 var colorDisplay = document.getElementById('ColorDisplay');
 var messageDisplay = document.querySelector('#messageDisplay');
 var resetButton = document.querySelector("#resetButton");
 var easyButton = document.querySelector("#easyButton");
 var hardButton = document.querySelector("#hardButton");
 
+// if the user selects the easy mode
 easyButton.addEventListener("click", function() {
   messageDisplay.textContent = " ";
   numSquares = 3;
@@ -24,6 +26,8 @@ easyButton.addEventListener("click", function() {
     }
   }
 })
+
+// if the user selects the hard mode
 hardButton.addEventListener("click", function() {
   messageDisplay.textContent = " ";
   numSquares = 6;
@@ -37,15 +41,15 @@ hardButton.addEventListener("click", function() {
     squareColor[i].style.display = "block";
   }
 })
+
+//  If the user reset the game
 resetButton.addEventListener("click", function() {
   messageDisplay.textContent = " ";
-
   resetButton.textContent = "New Colors";
   // generate new colors
   colors = generateRandomColors(numSquares);
   // pick a new random color from the array
   pickedColor = pickColor();
-  console.log("reset button", pickedColor);
   // change color display (rgb(x,x,x,)) to match picked color
   colorDisplay.textContent = pickedColor;
   // Change colors of squares
@@ -55,7 +59,6 @@ resetButton.addEventListener("click", function() {
 })
 
 colorDisplay.textContent = pickedColor;
-console.log("vdvsa", pickedColor);
 for (var i = 0; i < squareColor.length; i++) {
   // Assigning colors to squares
   squareColor[i].style.backgroundColor = colors[i];
@@ -73,6 +76,7 @@ for (var i = 0; i < squareColor.length; i++) {
     }
   })
 }
+
 // if user picked the correct color, the color of squares will be changed to clicked color
 function changeSquareColors(color) {
   for (var i = 0; i < squareColor.length; i++) {
