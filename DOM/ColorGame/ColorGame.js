@@ -38,6 +38,8 @@ hardButton.addEventListener("click", function() {
   }
 })
 resetButton.addEventListener("click", function() {
+  messageDisplay.textContent = " ";
+
   resetButton.textContent = "New Colors";
   // generate new colors
   colors = generateRandomColors(numSquares);
